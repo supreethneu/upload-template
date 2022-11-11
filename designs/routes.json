@@ -1,0 +1,18 @@
+{
+    "routes": [
+        {
+            "path": "home",
+            "component": "testuploadComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "home",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

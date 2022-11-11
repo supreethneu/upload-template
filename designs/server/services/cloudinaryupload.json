@@ -1,0 +1,201 @@
+[
+    {
+        "id": "SSD_SERVICE_ID_sd_GAGNCzEnPYRxp9ja",
+        "type": "tab",
+        "createdDate": "2022-11-10T10:15:33.212Z",
+        "label": "cloudinaryupload",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "cloudinaryupload",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_4aknWP4ZM10RV2Mt",
+        "type": "adf754bb-d0d5-6047-e7bd-27bf1b569fc7",
+        "z": "SSD_SERVICE_ID_sd_GAGNCzEnPYRxp9ja",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "cloudinaryConfig": "sd_L0ZKs4x4N9VFUMNW",
+        "file": "bh.input.data",
+        "folder": "\"test\"",
+        "resultMapping": "bh.result",
+        "functionName": "sd_4aknWP4ZM10RV2Mt",
+        "category": "General",
+        "x": 305,
+        "y": 80,
+        "wires": [
+            [
+                "sd_DxPnfA80PhDGj6uc"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "file": {
+                "type": "bh.input",
+                "value": "data",
+                "constant": false
+            },
+            "folder": {
+                "type": "str",
+                "value": "test",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "bh",
+                "value": "result",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cloudinaryupload",
+        "generated": true
+    },
+    {
+        "id": "sd_DxPnfA80PhDGj6uc",
+        "type": "HttpOut",
+        "z": "SSD_SERVICE_ID_sd_GAGNCzEnPYRxp9ja",
+        "viewType": "server",
+        "nodeType": "flow",
+        "name": "",
+        "headers": {},
+        "responseBody": {
+            "type": "bh",
+            "value": "result",
+            "ssd_typedInputField": true
+        },
+        "httpcode": {
+            "type": "num",
+            "value": 200,
+            "ssd_typedInputField": true
+        },
+        "responseType": "obj",
+        "swaggerResponse": {},
+        "responseMapping": {
+            "status": 200,
+            "obj": "bh.result",
+            "send": "bh.result"
+        },
+        "dataModelIsArray": false,
+        "inputs": 1,
+        "outputs": 0,
+        "erd": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "headers": [],
+            "produces": [],
+            "responses": []
+        },
+        "cookiesList": {},
+        "switchStates": {
+            "headers": "Map",
+            "cookies": "Map"
+        },
+        "functionName": "sd_DxPnfA80PhDGj6uc",
+        "category": "HTTP",
+        "x": 440,
+        "y": 100,
+        "wires": [],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cloudinaryupload",
+        "generated": true
+    },
+    {
+        "id": "sd_vsHotY2TudFu39vH",
+        "type": "HttpIn",
+        "z": "SSD_SERVICE_ID_sd_GAGNCzEnPYRxp9ja",
+        "viewType": "server",
+        "nodeType": "start",
+        "name": "",
+        "path": "upload",
+        "uploadpath": "\"temp\"",
+        "summary": "",
+        "description": "",
+        "method": "post",
+        "sequenceId": "",
+        "consumes": "",
+        "produces": "",
+        "filetype": "path",
+        "acceptFileUpload": true,
+        "useDataModel": false,
+        "dataModelIsArray": false,
+        "uploadFileOptions": {
+            "type": "path",
+            "fileOptions": [
+                {
+                    "name": "file",
+                    "maxCount": 1
+                }
+            ],
+            "path": "\"temp\""
+        },
+        "erd": "",
+        "erdName": "",
+        "entity": "",
+        "ref": "",
+        "editableListData": {
+            "fileoptions": [
+                {
+                    "key": "file",
+                    "value": "1",
+                    "rowId": "sd_gA5n32dPBt22q15u",
+                    "valid": true
+                }
+            ],
+            "responses": [],
+            "params": [],
+            "produces": [],
+            "consumes": []
+        },
+        "inputs": 0,
+        "outputs": 1,
+        "validateRequestUsingSwaggerDocs": false,
+        "category": "HTTP",
+        "x": 100,
+        "y": 100,
+        "wires": [
+            [
+                "sd_IL6FnKkEdFS7XhAs"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "uploadpath": {
+                "type": "str",
+                "value": "temp",
+                "nullable": "true",
+                "nullableValue": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "cloudinaryupload",
+        "functionName": "sd_vsHotY2TudFu39vH"
+    },
+    {
+        "id": "sd_IL6FnKkEdFS7XhAs",
+        "type": "Script",
+        "z": "SSD_SERVICE_ID_sd_GAGNCzEnPYRxp9ja",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.data=bh.input.files.file[0].path;",
+        "functionName": "sd_IL6FnKkEdFS7XhAs",
+        "category": "Function",
+        "x": 200,
+        "y": 100,
+        "wires": [
+            [
+                "sd_4aknWP4ZM10RV2Mt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "cloudinaryupload",
+        "generated": true
+    }
+]

@@ -1,0 +1,13 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" fxFlexFill>
+  <div fxLayout="row wrap" fxLayoutGap="1em;" fxLayoutAlign="center center" [fxShow]="true">
+    <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+      <input matInput [(ngModel)]="page.fu_place" placeholder="File Upload" [required]="false" (click)="fileInput.click()">
+
+    </mat-form-field>
+    <mat-progress-spinner *ngIf="page.loader==1" [mode]="&apos;indeterminate&apos;" color="primary" [value]="100" strokeWidth="2" [diameter]="30"></mat-progress-spinner>
+    <mat-icon *ngIf="page.loader==2">done</mat-icon>
+  </div>
+  <div>
+    <input hidden (change)="fileupl($event,&apos;fu_place&apos;)" #fileInput type="file" accept="image/*" id="file">
+  </div>
+</div>

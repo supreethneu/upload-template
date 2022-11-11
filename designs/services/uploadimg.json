@@ -1,0 +1,118 @@
+[
+    {
+        "id": "sd_XMfNpmNpiBKlGqlG",
+        "type": "tab",
+        "createdDate": "2022-11-10T10:22:02.155Z",
+        "label": "uploadimg",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "uploadimg",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_p0NOg8HMTSajqUP3",
+        "type": "HttpRequest",
+        "z": "sd_XMfNpmNpiBKlGqlG",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "\"http://localhost:8081/api/upload\"",
+        "urlMappingObj": {
+            "mapVarType": "str",
+            "mapVarValue": "http://localhost:8081/api/upload"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.input.formData",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "formData"
+        },
+        "resultMapping": "bh.resulttt",
+        "resultMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "resulttt"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_p0NOg8HMTSajqUP3",
+        "category": "HTTP",
+        "x": 505,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "uploadimg",
+        "generated": true
+    },
+    {
+        "id": "sd_tSrRS7Awj4V5e6vw",
+        "type": "Start",
+        "z": "sd_XMfNpmNpiBKlGqlG",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "clientbody",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "sd_tSrRS7Awj4V5e6vw",
+        "category": "General",
+        "x": 140,
+        "y": 100,
+        "wires": [
+            [
+                "sd_6sZhAT48I4Mq10A1"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "uploadimg"
+    },
+    {
+        "id": "sd_6sZhAT48I4Mq10A1",
+        "type": "Script",
+        "z": "sd_XMfNpmNpiBKlGqlG",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.input.formData = new FormData();\nbh.input.formData.append('file',bh.input.clientbody);",
+        "functionName": "sd_6sZhAT48I4Mq10A1",
+        "category": "Function",
+        "x": 300,
+        "y": 100,
+        "wires": [
+            [
+                "sd_p0NOg8HMTSajqUP3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "uploadimg",
+        "generated": true
+    }
+]
